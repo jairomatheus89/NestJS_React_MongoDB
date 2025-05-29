@@ -12,7 +12,7 @@ const MarinaPremium = () => {
 
   return (
     <span id="marinaPremium">
-      ★★★Marina★★★
+      M A R I N A
     </span>
   )
 }
@@ -49,16 +49,23 @@ const PerfilMessages = () => {
         <h2>Últimas mensagens</h2>
         <ul id="scrollzin">
             {messages.map(msg => (
-            <li key={msg._id}> 
-                <span id="apelido">
-                  <strong>
-                    {msg.username.toLowerCase() === 'marina'? 'Chef.Estado ':'Camarada '} 
-                    {msg.username.toLowerCase() === 'marina'?<MarinaPremium/> : msg.username.toLowerCase()}
-                  </strong>:<br />
+            <li className={msg.username.toLowerCase() === 'marina' ? 'marina-li' : 'li'} key={msg._id}>          
+              <span id="apelido">
+                <span className={msg.username.toLowerCase() === 'marina'? 'marina-style': ''}>
+                  {msg.username.toLowerCase() === 'marina' ? (
+                    <>
+                      <span>★★★Chef.Estado★★★</span>
+                    </>
+                  ) : 'Camarada '}
                 </span>
-                <span id="messaginha">
-                    &nbsp;- {msg.password}
-                </span><br />
+                   
+                <strong>
+                  {msg.username.toLowerCase() === 'marina'?<MarinaPremium/> : msg.username.toLowerCase()}
+                </strong>:<br />
+              </span>
+              <span id="messaginha">
+                  &nbsp;- {msg.password}
+              </span><br />
             </li>
             ))}
         </ul>

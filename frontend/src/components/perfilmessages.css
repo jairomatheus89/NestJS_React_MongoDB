@@ -17,13 +17,51 @@ h2{
     border-bottom:1px solid gold;
 }
 
-li{
+.li{
     position:relative;
-    width:250px;
+    width:100% - 24px;
     text-align: initial;
 }
 
+.marina-li{
+    text-align: initial;
+}
+
+#scrollzin li {
+  list-style: none;
+  position: relative;
+  padding-left: 24px; /* espaço pro GIF */
+}
+
+.li::before{
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0px;
+  width: 18px;
+  height: 26px;
+  mask-image: url('../assets/pngegg.png');
+  mask-size: cover;
+  mask-repeat: no-repeat;
+  mask-position: center;
+
+  background-color: gold;
+}
+
+.marina-li::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0px;
+  width: 24px;
+  height: 24px;
+  background-image: url('../assets/sickle.gif'); /* coloque o gif em public/estrela.gif */
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
 #scrollzin{
+    padding:0;
     margin:0;
     height: 222px;
     overflow-y: auto;
@@ -34,10 +72,29 @@ li{
 }
 
 #marinaPremium{
-    color: rgb(255, 83, 111);
-    text-shadow: 2px 2px 1px rgb(35, 124, 197);
+    border-radius:15px;
+    color: gold;
+    text-shadow: 1px 1px 1px rgb(0, 0, 0);
 }
 #roleState{
     color:gold;
     text-shadow: 1px 1px 1px rgb(0, 0, 0);
+}
+
+.marina-style{
+    font-style:italic;
+    font-weight: bolder;
+    font-size:18px;
+    border: 2px dotted black;
+    border-radius: 18px;
+    color:black;
+    text-shadow: 1px 1px 2px gold;
+    background-color: rgba(255, 0, 0, 0.5);
+}
+
+.cheficon{
+    position:relative;
+    width:18px;
+    height: auto;
+
 }
