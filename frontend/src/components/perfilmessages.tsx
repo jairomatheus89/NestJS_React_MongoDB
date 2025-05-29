@@ -12,7 +12,7 @@ const MarinaPremium = () => {
 
   return (
     <span id="marinaPremium">
-      M A R I N A
+      J a i r o
     </span>
   )
 }
@@ -49,22 +49,23 @@ const PerfilMessages = () => {
         <h2>Últimas mensagens</h2>
         <ul id="scrollzin">
             {messages.map(msg => (
-            <li className={msg.username.toLowerCase() === 'marina' ? 'marina-li' : 'li'} key={msg._id}>          
+            <li className={msg.username.toLowerCase() === 'jairo' ? 'marina-li' : 'li'} key={msg._id}>          
               <span id="apelido">
-                <span className={msg.username.toLowerCase() === 'marina'? 'marina-style': ''}>
-                  {msg.username.toLowerCase() === 'marina' ? (
+                <span className={msg.username.toLowerCase() === 'jairo'? 'marina-style': ''}>
+                  {msg.username.toLowerCase() === 'jairo' ? (
                     <>
-                      <span>★★★Chef.Estado★★★</span>
+                      <span id="chiefRole">★★★Chef.Estado★★★</span>
                     </>
                   ) : 'Camarada '}
                 </span>
                    
                 <strong>
-                  {msg.username.toLowerCase() === 'marina'?<MarinaPremium/> : msg.username.toLowerCase()}
+                  &nbsp;
+                  {msg.username.toLowerCase() === 'jairo'?<MarinaPremium/> : msg.username.toLowerCase()}
                 </strong>:<br />
               </span>
               <span id="messaginha">
-                  &nbsp;- {msg.password}
+                  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;- {msg.password}
               </span><br />
             </li>
             ))}

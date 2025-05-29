@@ -72,9 +72,10 @@ h2{
 }
 
 #marinaPremium{
-    border-radius:15px;
+    font-style: italic;
+    font-weight: bolder;
     color: gold;
-    text-shadow: 1px 1px 1px rgb(0, 0, 0);
+    text-shadow: 2px 2px 1px rgb(173, 0, 0);
 }
 #roleState{
     color:gold;
