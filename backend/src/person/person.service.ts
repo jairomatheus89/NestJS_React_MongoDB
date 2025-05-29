@@ -21,7 +21,7 @@ export class PersonService {
   }
 
   async findLatest(): Promise<Person[]> {
-    return this.personModel.find().sort({ createdAt: -1 }).limit(5).exec();
+    return this.personModel.find().sort({ createdAt: -1 }).limit(10).exec();
   }
 
 }

@@ -10,8 +10,8 @@ function App() {
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault()
-
     try {
+      username.toLowerCase();
       const response = await fetch('https://jairomatheus89.site/api/person', {
         method: 'POST',
         headers: {
@@ -24,7 +24,7 @@ function App() {
         throw new Error(`Erro: ${response.statusText}`)
       }
 
-      alert(`Mensagem enviada em nome de: ${username}`)
+      alert(`Mensagem enviada em nome de: ${username.toLowerCase()}`)
       window.location.reload()
     } catch (error) {
       alert('Falha ao criar pessoa: ' + error)
@@ -37,6 +37,7 @@ function App() {
       <form id="formzin" onSubmit={handleSubmit}>
         <label htmlFor="name">Digite seu Apelido/Vulgo:</label>
         <input
+          className='inputold'
           maxLength={25}
           id="name"
           type="text"
@@ -46,13 +47,14 @@ function App() {
         />
         <label htmlFor="messagebox">Digite sua mensagem:</label>
         <textarea
+          className='inputold'
           maxLength={150}
           id="messagebox"
           required
           value={password}
           onChange={e => setPass(e.target.value)}
         />
-        <button type="submit">Enviar</button>
+        <button id="button" type="submit">Enviar</button>
       </form>
       <PerfilMessages/>
       <img id="sickle1" src={sickle}/>

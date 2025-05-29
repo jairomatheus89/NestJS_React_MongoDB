@@ -8,6 +8,15 @@ interface Message {
   password: string
 }
 
+const MarinaPremium = () => {
+
+  return (
+    <span id="marinaPremium">
+      ★★★Marina★★★
+    </span>
+  )
+}
+
 const PerfilMessages = () => {
   const [messages, setMessages] = useState<Message[]>([])
   const [loading, setLoading] = useState(true)
@@ -42,7 +51,10 @@ const PerfilMessages = () => {
             {messages.map(msg => (
             <li key={msg._id}> 
                 <span id="apelido">
-                <strong>(camarada) {msg.username}</strong>:<br />
+                  <strong>
+                    {msg.username.toLowerCase() === 'marina'? 'Chef.Estado ':'Camarada '} 
+                    {msg.username.toLowerCase() === 'marina'?<MarinaPremium/> : msg.username.toLowerCase()}
+                  </strong>:<br />
                 </span>
                 <span id="messaginha">
                     &nbsp;- {msg.password}
