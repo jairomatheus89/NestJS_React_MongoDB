@@ -1,0 +1,29 @@
+#master{
+    margin-top:20px;
+    position:relative;
+    width: 100%;
+    height: 260px;
+    overflow: hidden;
+}
+
+h2{
+    color :gold;
+    margin:0;
+    border-bottom:1px solid gold;
+}
+
+li{
+    position:relative;
+    width:250px;
+    text-align: initial;
+}
+
+#scrollzin{
+    margin:0;
+    height: 222px;
+    overflow-y: auto;
+}
+
+#messaginha{
+    color:white;
+}

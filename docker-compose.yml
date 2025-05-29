@@ -1,0 +1,46 @@
+version: '3.8'
+networks:
+  fullstack-network:
+    driver: bridge
+services:
+  mongo:
+    image: mongo:6.0
+    container_name: mongo_fullstack
+    ports:
+      - "27017:27017"
+    volumes:
+      - mongo_data:/data/db
+    restart: unless-stopped
+    networks:
+      - default
+      - fullstack-network
+
+  backend:
+    build: ./backend
+    ports:
+      - "3000:3000"
+    depends_on:
+      - mongo
+    networks:
+      - default
+      - fullstack-network
+
+
+  localstack:
+    image: localstack/localstack
+    container_name: localstack_fullstack
+    ports:
+      - "4566:4566"          # Main edge port
+      - "4572:4572"          # S3
+    environment:
+      - SERVICES=s3
+      - DEBUG=1
+      - DATA_DIR=/tmp/localstack/data
+    networks:
+      - fullstack-network
+    volumes:
+      - "./localstack_data:/tmp/localstack"
+    restart: unless-stopped
+
+volumes:
+  mongo_data:
